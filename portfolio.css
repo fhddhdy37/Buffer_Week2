@@ -1,0 +1,230 @@
+* {
+  /* content+padding+border를 포함한 값을 width, height의 기준으로 정함 */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "나눔 고딕", NanumGothic, "돋움", Dotum, sans-serif;
+}
+
+.container {
+  /* 헤더, 메인 내용, 푸터를 수직방향으로 나열 */
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #000;
+  height: 120px;
+}
+
+header h1 {
+  width: 1080px;
+  padding: 40px;
+  font-size: 40px;
+  color: #fff;
+  font-weight: bold;
+  /* 가운데 정렬 */
+  /* margin을 0 auto로 하면, margin-top과 margin-bottom은 0, margin-left와 margin-right는 auto로 설정된다 */
+  /* auto로 설정된 값은 가능한 큰 값이 지정된다. /*
+  /* 상하로는 여백이 없고, 좌우로는 가장 큰 여백을 주므로 가운데 정렬이 일어나는 것이다. */
+  margin: 0 auto;
+}
+
+section {
+  /* 네비게이션, 3칸짜리 메뉴, '구성 요소'라고 써있는 제목, 3장의 카드들을 수직 방향으로 나열 */
+  display: flex;
+  flex-direction: column;
+  width: 1080px;
+  padding: 40px;
+  /* 가운데 정렬 */
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  /* 글자의 가운데 정렬을 위한 flex 컨테이너 선언 */
+  display: flex;
+  /* 수직 가운데 정렬 */
+  align-items: center;
+  /* 수평 가운데 정렬 */
+  justify-content: center;
+  width: calc(100% / 3);
+  height: 33px;
+  border: 1px #d1d1d1 solid;
+  font-size: 16px;
+  color: #000;
+  /* a 태그는 기본적으로 밑줄을 생성하는데, 우리는 밑줄이 필요없으므로 없앴다 */
+  text-decoration: none;
+}
+
+/* 첫 태그 제외한 모든 태그에 좌측 여백을 준다 */
+nav a:not(:first-child) {
+  margin-left: 14px;
+}
+
+/* href="#form" 속성을 가진 a 태그에 마우스가 올라가면 스타일을 적용한다 */
+nav a[href="#form"]:hover {
+  border: #454545 1px solid;
+  font-weight: bold;
+}
+
+/* section의 자식 요소 중 nav 다음에 오는 모든 형제 태그에 위쪽 여백을 준다 */
+section > nav ~ * {
+  margin-top: 30px;
+}
+
+section h2 {
+  /* 글자의 수직 가운데 정렬을 위한 flex 컨테이너 선언 */
+  display: flex;
+  /* 수직 가운데 정렬 */
+  align-items: center;
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+  height: 60px;
+  border-bottom: #454545 1px solid;
+}
+
+.card {
+  border: #d1d1d1 1px solid;
+}
+
+.card .card-title {
+  /* 글자의 수직 가운데 정렬을 위한 flex 컨테이너 선언 */
+  display: flex;
+  /* 수직 가운데 정렬 */
+  align-items: center;
+  height: 46px;
+  padding: 0 15px;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  background: #f7f7f7;
+}
+
+.card .card-content {
+  padding: 30px;
+  font-size: 12px;
+  color: #000;
+  border-top: #d1d1d1 1px solid;
+
+  line-height: 1.6em;
+}
+
+footer {
+  /* 회사정보, 카피라이트를 수직 방향으로 나열 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 120px;
+  /* 수평 가운데 정렬 */
+  margin: 0 auto;
+  padding: 30px;
+  font-size: 12px;
+  /* 수평선 */
+  width: 100%;
+  border-top: #d1d1d1 1px solid;
+}
+
+footer p {
+  /* reset css로 인해 줄간격이 0이 되었음 */
+  /* 보완하기 위해 별도로 아래 여백 부여 */
+  margin-bottom: 1em;
+}
+footer .contact {
+  color: #999;
+}
+
+footer .copyright {
+  color: #000;
+}
+
+ul {
+  list-style: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.news {
+  border: 1px solid #e4e4e4;
+  padding: 20px;
+}
+
+.photoarticle {
+  display: flex;
+}
+
+.news-title {
+  color: #00c;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.article {
+  color: #000;
+  font-size: 12px;
+  font-weight: lighter;
+  padding: 10px;
+}
+
+.webtoon {
+  display: block;
+  border: 1px solid #e4e4e4;
+  padding: 10px;
+}
+
+div .webtoon a {
+  color: #000;
+  text-decoration: none;
+}
+
+div .webtoon a:hover {
+  text-decoration: underline;
+}
+
+div .layer {
+  display: flex;
+}
+
+.title {
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.cuttoon {
+  width: 30px;
+  height: 15px;
+  border: 1px solid #71b036;
+  background: #80c83d;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1em;
+}
+
+.smarttoon {
+  width: 50px;
+  height: 15px;
+  border: 1px solid #df4e28;
+  background: #ec5336;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1em;
+}
+
+ul .webtoon-list {
+  float: left;
+  margin: 10px;
+}
